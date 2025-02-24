@@ -1,1 +1,1 @@
-En hemsida där du kan beställa fotbollatröjor
+En webbshop där du kan beställa fotbollatröjor
