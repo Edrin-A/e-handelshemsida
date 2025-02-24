@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fotbollströjor</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="script.js"></script>
+</head>
+
+<body>
+  <!-- huvudbehållare för hela sidan, kör på engelska på allt framöver för att hålla det enkelt och konsistent -->
+  <div class="container">
+    <h1>Fotbollströjor</h1>
+    <div class="header-discount">
+      <p>Aktuella rabatter: 10% vid köp av 2+ tröjor!! 50kr rabatt på namn + nummer!! 150kr rabatt vid alla tillägg!!
+      </p>
+    </div>
+
+    <!-- produktvisningssektion med två huvuddelar: visning och konfiguration -->
+    <div class="product-container">
+      <div class="product-viewer">
+        <!-- visningsdelen -->
+        <div class="jersey-display">
+          <!-- tröjbild med knappar för fram/baksida.. se till att namnen på bilderna i mappen är lag-fram eller lag-bak.jpg!!!! -->
+          <img id="jerseyImage" src="bilder/real-fram.jpg" alt="Tröja">
+          <div class="view-controls">
+            <button id="viewFront" class="active">Framsida</button>
+            <button id="viewBack">Baksida</button>
+          </div>
+        </div>
+
+        <!-- konfigurationssektion för tröjan -->
+        <div class="product-config">
+          <!-- en dropdown för att välja lag -->
+          <div class="select-group">
+            <label>Välj Lag:</label>
+            <select id="teamSelect">
+              <option value="real">Real Madrid</option>
+              <option value="barcelona">Barcelona</option>
+              <option value="city">Manchester City</option>
+              <option value="malmo">Malmö FF</option>
+              <option value="bayern">Bayern Munchen</option>
+              <option value="liverpool">Liverpool</option>
+              <option value="milan">AC Milan</option>
+            </select>
+          </div>
+
+          <!-- en dropdown för att välja storlek -->
+          <div class="size-group">
+            <label>Storlek:</label>
+            <select id="sizeSelect">
+              <option value="S">S</option>
+              <option value="M">M</option>
+              <option value="L">L</option>
+              <option value="XL">XL</option>
+            </select>
+          </div>
+
+          <!-- class för att välja extra tillägg -->
+          <div class="customization-group">
+            <h3>Extra tillägg:</h3>
+            <div class="custom-option">
+              <input type="checkbox" id="namePrint">
+              <label for="namePrint">Namn på tröjan (+149kr)</label>
+              <input type="text" id="nameText" placeholder="Ange namn" disabled>
+            </div>
+
+            <!-- class för att välja nummer -->
+            <div class="custom-option">
+              <input type="checkbox" id="numberPrint">
+              <label for="numberPrint">Nummer på tröjan (+119kr)</label>
+              <input type="number" id="numberText" min="1" max="99" placeholder="Ange nummer" disabled>
+            </div>
+
+            <!-- class för att välja Champions League-patch -->
+            <div class="custom-option">
+              <input type="checkbox" id="leaguePatch">
+              <label for="leaguePatch">Champions League-patch (+69kr)</label>
+            </div>
+          </div>
+
+          <!-- class för att välja antal -->
+          <div class="quantity-group">
+            <label>Antal:</label>
+            <input type="number" id="quantity" min="1" value="1">
+          </div>
+
+          <div class="price-summary">
+            <div class="price-row">
+              <p>Grundpris:</p>
+              <p id="basePrice">1199 kr</p>
+            </div>
+            <div class="price-row">
+              <p>Tillägg:</p>
+              <p id="addonsPrice">0 kr</p>
+            </div>
+            <div class="price-row">
+              <p>Rabatt:</p>
+              <p id="discountAmount" class="discount">-0 kr</p>
+            </div>
+            <div class="price-row total">
+              <p>Totalt:</p>
+              <p id="totalPrice">1199 kr</p>
+            </div>
+          </div>
+
+          <button id="addToCart" class="btn-primary">Lägg i varukorg</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

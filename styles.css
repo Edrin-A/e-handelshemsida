@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+  font-family: "Raleway", sans-serif;
+  background-color: lightgray;
+  color: black;
+}
+
+/* detta är huvudbehållaren för allt */
+.container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* justera rubriken */
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* göra så att det är flexbox och att det är gap mellan bilderna, border-radius för att ha rundade hörn och box-shadow för att ha en skugga */
+.product-viewer {
+  flex: 1;
+  display: flex;
+  gap: 40px;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 15px black;
+}
+
+
+.jersey-display {
+  flex: 1;
+  text-align: center;
+}
+
+/* gör så att bilden är 100% av skärmen och att den är responsiv, även ha en transition */
+.jersey-display img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+/* gör så att bilden är 105% när man hovrar över den */
+.jersey-display img:hover {
+  transform: scale(1.05);
+}
+
+.view-controls {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.view-controls button {
+  padding: 10px 20px;
+  border: none;
+  background: lightgray;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+/* gör så att knappen är blå när man har valt den */
+.view-controls button.active {
+  background: blue;
+  color: white;
+}
+
+/* detta är behållaren för alla valmöjligheter */
+.product-config {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+}
+
+/* alla valmöjligheter */
+.select-group,
+.size-group,
+.customization-group,
+.quantity-group {
+  margin-bottom: 10px;
+}
+
+/* välj lag, namn och nummer */
+select,
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+/* gör så att det är margin på alla extra tilläggen */
+.custom-option {
+  margin: 15px 0;
+}
+
+/* gör så att det är en bakgrund, padding, border-radius och margin på priset */
+.price-summary {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  margin: 5px 0;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+/* detta ändrar på totalpriset */
+.price-row.total {
+  font-size: 1.2em;
+  font-weight: bold;
+  border-top: 1px solid lightgray;
+  padding-top: 10px;
+  margin-top: 10px;
+}
+
+.discount {
+  color: green;
+}
+
+
+/* detta är knappen för att lägga till i varukorgen */
+.btn-primary {
+  background: blue;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  margin-top: -15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1em;
+  transition: background 0.3s ease;
+}
+
+/* gör så att knappen är mörkare blå när man hovrar över den */
+.btn-primary:hover {
+  background: darkblue;
+}
+
+/* det var irriterande att vissa bilder var större än andra, så jag gjorde så att alla bilder skulle vara 700x700 pixlar */
+#jerseyImage {
+  width: 700px;
+  height: 700px;
+  object-fit: contain;
+}
+
+/* göra så att det inte är margin på priserna annars blir det för mycket mellanrum */
+.price-row p {
+  margin: 0;
+}
+
+/* gör så texten under Fotbollströjor är i mitten och att det är margin ovanför och under */
+.header-discount {
+  text-align: center;
+  margin: -20px 0 20px 0;
+  color: green;
+  font-size: 0.9em;
+}
